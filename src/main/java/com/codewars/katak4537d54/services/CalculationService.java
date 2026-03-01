@@ -20,26 +20,24 @@ public class CalculationService {
      *
      * Empty list is considered to have zero greatest sum. Note that the empty list or array is also a valid sublist/subarray.
      * @param request
-     * @return
+     * @return SubarrayResponse
      */
-    public int max(SubarrayRequest request) {
+    public SubarrayResponse max(SubarrayRequest request) {
 
         //Empty list is considered to have zero greatest sum
         if (request.getNumbers() == null || request.getNumbers().length == 0) {
-            return new SubarrayResponse(0, new int[]{}, "Array is Empty");
+            return new SubarrayResponse(0, "Array is Empty");
         }
 
         //If the list is made up of only negative numbers, return 0 instead
         boolean allNegative = Arrays.stream(request.getNumbers()).allMatch(n -> n < 0);
         if (allNegative) {
-            return new SubarrayResponse(0, new int[]{});
+            return new SubarrayResponse(0, "All numbers are negative");
         }
 
         //Easy case is when the list is made up of only positive numbers and the maximum sum is the sum of the whole array
+        return new SubarrayResponse(Arrays.stream(request.getNumbers()).reduce(0, Integer::sum), "Calculation complete");
 
     }
-
-
-
 
 }
