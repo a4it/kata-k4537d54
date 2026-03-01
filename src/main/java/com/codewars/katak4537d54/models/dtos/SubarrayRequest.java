@@ -9,8 +9,6 @@ import lombok.*;
 @AllArgsConstructor
 public class SubarrayRequest {
 
-    @NotNull
-    @Size(min = 0, message = "Array must contain at least one number")
     private int[] numbers;
 
 }

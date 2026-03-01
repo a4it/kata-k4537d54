@@ -4,7 +4,7 @@
 
 ## 1. User Story (MVP but semi technical story)
 
-**As a** user,
+**As a** user, 
 **I want** to submit an array of integers via a REST API
 **So that** I receive the maximum sum of any contiguous subarray.
 
